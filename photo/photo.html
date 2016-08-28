@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var photos = [
+      'http://127.0.0.1:8000/foot.jpg',
+      'http://127.0.0.1:8000/haha.jpg',
+      'http://127.0.0.1:8000/lala.jpg',
+      'http://127.0.0.1:8000/love.jpg',
+      'http://127.0.0.1:8000/meqi.jpg',
+      'http://127.0.0.1:8000/cute.jpg',
+      'http://127.0.0.1:8000/p1.jpg',
+      'http://127.0.0.1:8000/p2.jpg',
+      'http://127.0.0.1:8000/p3.jpg'
+    ]
+    function createGallary(options){
+      width = options.width || 800;
+      var gallary = document.createElement('div')
+      gallary.style = `width:${width}px;background:#ddd;border:1px solid #555; border-radius:5px;overflow:auto;position: relative;`
+      options.photos.forEach(function(purl){
+        var img = document.createElement('img')
+        img.src = purl
+        img.style = `float:left; width: 200px;`
+        gallary.appendChild(img)
+      })
+      return gallary
+    }
+    document.body.appendChild(createGallary({size:800,photos:photos}))
+  </script>
+</body>
+</html>

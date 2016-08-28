@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script src="micromarkdown.js"></script>
+    <script src="nanobar.js"></script> 
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <article>
+        <section># ok
+## ok
+* okok
+* okok2
+        </section>
+		<section># slide2
+## what
+* point1
+* point2
+</section>
+		<section># slide3
+## why
+* point1
+* point2
+## how
+* point1
+* point2
+</section>
+<section># Q&A
+</section>
+        <!-- <section>
+            <h1>cube2</h1>
+        </section>
+        <section>
+            <h1>cube3</h1>
+        </section> -->
+    </article>
+    <script src="main.js"></script>
+    <script>
+        Presentation('article')
+    </script>
+
+</body>
+
+</html>
