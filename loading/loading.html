@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function createLoadingBar(option){
+    var size = option.size || 300
+    loadingBar = document.createElement('div')
+    loadingBar.style = `position:relative;height:20px;width:${size}px;background:#f5f5f5;border-bottom:1px solid #ddd`;
+    inner = document.createElement('div')
+    inner.style = "width: 0;background: #d43f3a;position: absolute;top: 0;left: 0;bottom: 0;"
+    loadingBar.appendChild(inner)
+    var i = 0
+    var timer = setInterval(function(){
+        i += 10
+        console.log("what")
+        inner.style.width = i+"%"
+        if(i>=100) {
+          clearInterval(timer);
+          inner.style.width = "100%";
+          if(option.success) option.success()
+        }
+    },1000)
+    return loadingBar
+  }
+  document.body.appendChild(createLoadingBar({size:400, success:function(){console.log("success")}}))
+
+
+
+  </script>
+
+</body>
+</html>
