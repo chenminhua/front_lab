@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function createForm(options){
+      var form = document.createElement('div')
+      var input, div
+      Object.keys(options).forEach(function(i){
+        div = document.createElement('div')
+        div.appendChild(document.createTextNode(i))
+        if(options[i] == "textarea"){
+          input = document.createElement('textarea')
+        }else{
+          input = document.createElement('input')
+          input.type = options[i]
+        }
+        input.name = i
+        div.appendChild(input)
+        form.appendChild(div)
+      })
+      return form
+    }
+    document.body.appendChild(createForm({"name":'text','password':'password','mail':'email',"description":"textarea"}))
+  </script>
+</body>
+</html>
